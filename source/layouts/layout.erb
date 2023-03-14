@@ -38,6 +38,8 @@ under the License.
         >
       <% end %>
     <% end %>
+
+    <link href="/images/logo.png" rel="icon" type="image/ico"></link>
     <title><%= current_page.data.title || "API Documentation" %></title>
 
     <style media="screen">
@@ -72,7 +74,9 @@ under the License.
       </span>
     </a>
     <div class="toc-wrapper">
+     <a href="https://bitmusa.com" target="_blank">
       <%= image_tag "logo.png", class: 'logo' %>
+      </a>
       <% if language_tabs.any? %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>
