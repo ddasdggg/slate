@@ -413,6 +413,9 @@
                   <li>
                     <a href="#future-wallet" class="toc-h2 toc-link" data-title="Future Wallet">Future Wallet</a>
                   </li>
+                  <li>
+                    <a href="#transfer" class="toc-h2 toc-link" data-title="Transfer">Transfer</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1497,17 +1500,14 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 <td>API key</td>
 </tr>
 </tbody></table>
-<h1 id='spot-endpoint'>Spot Endpoint</h1><h2 id='order'>Order</h2>
+<h2 id='transfer'>Transfer</h2>
+<p>Spot or future asset transfer</p>
+
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E167842752431114"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p><code>PUT /spot/trade</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code></code></pre></div>
+<p><code>GET /asset/exchange</code></p>
 <h3 id='headers-9'>Headers:</h3>
 <table><thead>
 <tr>
@@ -1525,6 +1525,67 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </tr>
 </tbody></table>
 <h3 id='request-body-3'>Request Body:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>unit</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>from</td>
+<td>Interger</td>
+<td>Yes</td>
+<td>0: Spot,<br/> 1: Future</td>
+</tr>
+<tr>
+<td>to</td>
+<td>Interger</td>
+<td>Yes</td>
+<td>0: Spot,<br/> 1: Future</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Decimal</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h1 id='spot-endpoint'>Spot Endpoint</h1><h2 id='order'>Order</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E167842752431114"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>PUT /spot/trade</code></p>
+<h3 id='headers-10'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='request-body-4'>Request Body:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -1622,7 +1683,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p><code>GET /spot/trade/transaction</code></p>
-<h3 id='headers-10'>Headers:</h3>
+<h3 id='headers-11'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -1638,7 +1699,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 <td>API key</td>
 </tr>
 </tbody></table>
-<h3 id='request-body-4'>Request Body:</h3>
+<h3 id='request-body-5'>Request Body:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -1685,7 +1746,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p><code>GET /spot/trade/transaction/{orderId}</code></p>
-<h3 id='headers-11'>Headers:</h3>
+<h3 id='headers-12'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -1753,7 +1814,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p><code>GET /spot/trade/conclusion</code></p>
-<h3 id='headers-12'>Headers:</h3>
+<h3 id='headers-13'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -1769,7 +1830,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 <td>API key</td>
 </tr>
 </tbody></table>
-<h3 id='request-body-5'>Request Body:</h3>
+<h3 id='request-body-6'>Request Body:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -1881,7 +1942,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p><code>GET /spot/trade/non</code></p>
-<h3 id='headers-13'>Headers:</h3>
+<h3 id='headers-14'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -1897,7 +1958,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 <td>API key</td>
 </tr>
 </tbody></table>
-<h3 id='request-body-6'>Request Body:</h3>
+<h3 id='request-body-7'>Request Body:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -1938,7 +1999,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p><code>POST /spot/trade/cancel</code></p>
-<h3 id='headers-14'>Headers:</h3>
+<h3 id='headers-15'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -1967,7 +2028,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p><code>POST /spot/trade/cancel/{orderId}</code></p>
-<h3 id='headers-15'>Headers:</h3>
+<h3 id='headers-16'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -1995,7 +2056,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p><code>PUT /future/trade</code></p>
-<h3 id='headers-16'>Headers:</h3>
+<h3 id='headers-17'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -2011,7 +2072,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 <td>API key</td>
 </tr>
 </tbody></table>
-<h3 id='request-body-7'>Request Body:</h3>
+<h3 id='request-body-8'>Request Body:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -2181,7 +2242,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p><code>GET /future/trade/transaction</code></p>
-<h3 id='headers-17'>Headers:</h3>
+<h3 id='headers-18'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -2365,7 +2426,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p><code>GET /future/trade/non</code></p>
-<h3 id='headers-18'>Headers:</h3>
+<h3 id='headers-19'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -2429,7 +2490,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p><code>POST /future/trade/cancel</code></p>
-<h3 id='headers-19'>Headers:</h3>
+<h3 id='headers-20'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -2473,7 +2534,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p><code>POST /future/trade/cancel{orderId}</code></p>
-<h3 id='headers-20'>Headers:</h3>
+<h3 id='headers-21'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -2500,7 +2561,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p><code>GET /future/trade/leverage/{ticker}</code></p>
-<h3 id='headers-21'>Headers:</h3>
+<h3 id='headers-22'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -2530,7 +2591,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p><code>POST /future/trade/leverage</code></p>
-<h3 id='headers-22'>Headers:</h3>
+<h3 id='headers-23'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -2546,7 +2607,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 <td>API key</td>
 </tr>
 </tbody></table>
-<h3 id='request-body-8'>Request Body:</h3>
+<h3 id='request-body-9'>Request Body:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -2606,7 +2667,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p><code>GET /future/trade/position/{ticker}</code></p>
-<h3 id='headers-23'>Headers:</h3>
+<h3 id='headers-24'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -2636,7 +2697,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p><code>POST /future/trade/position/close</code></p>
-<h3 id='headers-24'>Headers:</h3>
+<h3 id='headers-25'>Headers:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -2652,7 +2713,7 @@ If your API key is inadvertently exposed, delete it immediately and generate a n
 <td>API key</td>
 </tr>
 </tbody></table>
-<h3 id='request-body-9'>Request Body:</h3>
+<h3 id='request-body-10'>Request Body:</h3>
 <table><thead>
 <tr>
 <th>Name</th>
