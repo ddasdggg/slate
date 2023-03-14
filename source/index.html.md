@@ -944,6 +944,30 @@ Get Information of Future Wallet
 |-------------|--------|----------|-------------|
 | x-api-token | String | Yes      | API key     |
 
+## Transfer
+Spot or future asset transfer
+
+> Response
+
+```json
+```
+
+```GET /asset/exchange```
+### Headers:
+
+| Name        | Type   | Required | Description |
+|-------------|--------|----------|-------------|
+| x-api-token | String | Yes      | API key     |
+
+
+### Request Body:
+
+| Name   | Type     | Required | Description             |
+|--------|----------|----------|-------------------------|
+| unit   | String   | Yes      |                         |
+| from   | Interger | Yes      | 0: Spot,<br/> 1: Future |
+| to     | Interger | Yes      | 0: Spot,<br/> 1: Future |
+| amount | Decimal  | Yes      | API key                 |
 
 # Spot Endpoint
 
